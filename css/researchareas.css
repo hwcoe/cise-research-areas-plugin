@@ -2,11 +2,6 @@
 * HWCOE Research Areas Display Styles
 */
 
-/*.companypostimg {
-    margin: auto;
-    float: none;
-}*/
-
 .fancyboxcont {
     display: none;
 }
@@ -67,10 +62,6 @@ html.fancybox-lock {
     text-align: left;
 }
 
-p.co-func-fancy-op {
-    margin: 0;
-}
-
 .researchareas-tab {
     display: flex;
     flex-direction: row;
@@ -123,21 +114,6 @@ p.co-func-fancy-op {
     color: #000;
 }
 
-.co-line-3,
-.co-line-5,
-.co-line-6,
-.co-line-fancy-6 {
-    display: none;
-}
-
-.choice-6 {
-    display: block;
-}
-
-.testimonial-text a:focus {
-    outline: none;
-}
-
 .fancyboxcont {
     padding: 0px;
     width: 75%;
@@ -145,40 +121,16 @@ p.co-func-fancy-op {
     background: #FAF8F2 url(../img/bg-texture.png)
 }
 
-hr.co-func-line {
+hr.header-line {
     margin: 16px 0;
     border-bottom: 1px solid #ccc;
 }
 
-@media(max-width:1335px) {
-	.fancy-choice-6 {
-		display: block;
-	}
-	
-	.co-line-fancy-5 {
-		display: none;
-	}
+/*Images Sizing*/
+.wpsp-image-center .wp-post-image, .wpsp-image-center img {
+	max-width: 150px;
 }
 
-@media(max-width:1335px) {
-	.fancy-choice-6 {
-		display: block;
-	}
-	
-	.co-line-fancy-5 {
-		display: none;
-	}
-}
-
-@media(max-width:1144px) {
-	p.co-func-fancy-op {
-		max-width: 300px;
-	}
-	
-	.co-line-fancy-3 {
-		display: none;
-	}
-}
 
 @media(max-width:1030px) {
     .popupcont {
@@ -198,22 +150,6 @@ hr.co-func-line {
     .popupcont h1 {
         text-align: center;
     }
-    p.co-func-fancy-op {
-        text-align: center;
-		max-width: none;		
-    }
-	.co-line-fancy-3 {
-		display: inline;
-	}
-}
-
-@media(max-width:902px) {
-    .fancy-choice-6 {
-        display: block;
-    }
-    .co-line-fancy-5 {
-        display: none;
-    }
 }
 
 @media(max-width:767px) {
@@ -221,19 +157,9 @@ hr.co-func-line {
         width: 85% !important;
         left: 7% !important;
     }
-	.popupcont img {
+	/*.popupcont img {
         width: auto;
-    }
-}
-
-@media(max-width:710px) {
-    p.co-func-fancy-op {
-        max-width: 300px;
-        margin: auto;
-    }
-    .co-line-fancy-3 {
-        display: none;
-    }
+    }*/
 }
 
 @media(max-width:460px) {
@@ -244,11 +170,4 @@ hr.co-func-line {
         font-size: 34px;
         line-height: 40px;
     }
-    p.co-func-fancy-op {
-        font-size: 13px;
-        width: 220px;
-    }
-	.half-word {
-		display: none;
-	}
 }

@@ -58,7 +58,7 @@ Class ResearchAreas {
 		}
 		$query = new WP_Query( $args  );
 
-		$testimonials = '<div class="researchareas-tab">'; //col-md-12
+		$research_areas = '<div class="researchareas-tab">'; //col-md-12
 
 		if ( $query->have_posts() ) {
 			while ( $query->have_posts() ) : $query->the_post();
@@ -66,26 +66,26 @@ Class ResearchAreas {
 
 				$featimageURL = wp_get_attachment_url( get_post_thumbnail_id($post_id) );
 
-				$testimonials .= '<div class="researchbox" aria-label="' .get_the_title(). '">';
+				$research_areas .= '<div class="researchbox" aria-label="' .get_the_title(). '">';
 										
-				$testimonials .= $this->wpse69204_excerpt(); 
-				$testimonials .= 
+				$research_areas .= $this->wpse69204_excerpt(); 
+				$research_areas .= 
 					'<div class="fancyboxcont" id="post_'.$post_id.'">';
-				$testimonials .= 
+				$research_areas .= 
 						'<div class="col-md-12 popupcont">';
-				$testimonials .= 
+				$research_areas .= 
 							'<div class="popupcont-text"><h1>' .get_the_title(). '</h1>
-							<hr class="co-func-line">
-							<p>' .get_field('content_area'). '</p>' ;
+								<hr class="header-line">
+								<p>' .get_field('content_area'). '</p>' ;
 
-				$testimonials .= '</div></div></div></div>';
+				$research_areas .= '</div></div></div></div>';
 			endwhile;
 			wp_reset_postdata();
 		} else { ?>
 			<p style="text-align:center;">There are no research areas to show. Please come back.</p>
 		<?php }
-		$testimonials .= '</div>';
-		return $testimonials;
+		$research_areas .= '</div>';
+		return $research_areas;
 	} //end research_areas_shortcode function
 	
 	public function wpse69204_excerpt( $post_id = null )
