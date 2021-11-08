@@ -95,7 +95,7 @@ Class ResearchAreas {
 		$featimageURL = wp_get_attachment_url( get_post_thumbnail_id($post_id) );
 		$featureimageALT = get_post_meta( get_post_thumbnail_id(), '_wp_attachment_image_alt', true );
 		
-		$excerpt .= '<a class="various" href="#post_'.$post->ID.'" title="' .get_the_title(). '" aria-label="Click to see the ' .get_the_title(). ' research area associated faculty"><div class="researchthumbnail" style="background-image: url(' .$featimageURL. ');"><h2>' .get_the_title(). '</h2></div></a>';
+		$excerpt .= '<a class="various" data-fancybox="researchareas" href="#post_'.$post->ID.'" title="' .get_the_title(). '" aria-label="Click to see the ' .get_the_title(). ' research area associated faculty"><div class="researchthumbnail" style="background-image: url(' .$featimageURL. ');"><h2>' .get_the_title(). '</h2></div></a>';
 
 		return $excerpt;
 	}
