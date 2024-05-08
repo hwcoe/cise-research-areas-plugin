@@ -50,11 +50,11 @@ Class ResearchAreas {
 		
 		$dispCount  = (int) $posts_per_page;
 		if($dispCount==50){
-			$colmd = three;
+			$colmd = 'three';
 		}else if($dispCount=="3"){
-			$colmd = three; 
+			$colmd = 'three'; 
 		}else{
-			$colmd = three;
+			$colmd = 'three';
 		}
 		$query = new WP_Query( $args  );
 
