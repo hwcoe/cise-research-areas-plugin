@@ -7,7 +7,26 @@ Author: Allison Logan
 Author URI: http://allisoncandreva.com/
 */
 
+// Add field groups for Research Areas and faculty information
+add_filter('acf/settings/save_json', 'cise_faculty_acf_json_save_point');
 
+if (!function_exists('cise_faculty_acf_json_save_point')) { 
+	function cise_faculty_acf_json_save_point( $path ) {
+		// update path
+		$paths[] = plugin_dir_path(__FILE__) . 'inc/acf-json';
+		return $path; 
+	}
+}
+
+add_filter('acf/settings/load_json', 'cise_faculty_acf_json_load_point');
+if (!function_exists('cise_faculty_acf_json_load_point')) {
+
+	function cise_faculty_acf_json_load_point( $paths ) {
+	    unset($paths[0]);
+	    $paths[] = plugin_dir_path(__FILE__) . 'inc/acf-json';
+	    return $paths;
+	}
+}
 Class ResearchAreas {
 
 	public $plugin_dir;
@@ -102,3 +121,4 @@ Class ResearchAreas {
 }
 
 $ResearchAreas = new ResearchAreas();
+
