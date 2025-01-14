@@ -27,6 +27,23 @@ if (!function_exists('cise_faculty_acf_json_load_point')) {
 	    return $paths;
 	}
 }
+
+// Add Faculty page post template
+function cise_faculty_add_page_template ($templates) {
+    $templates[WP_PLUGIN_DIR . '/cise-research-areas-plugin/single-post-faculty.php'] = 'Faculty Single Entry';
+    return $templates;
+    }
+add_filter( 'theme_post_templates', 'cise_faculty_add_page_template' );        // regular Posts
+
+function cise_faculty_redirect_page_template ($template) {
+    $post = get_post();
+    $page_template = get_post_meta( $post->ID, '_wp_page_template', true );
+    if ('single-post-faculty.php' == basename ($page_template))
+        $template = WP_PLUGIN_DIR . '/cise-research-areas-plugin/single-post-faculty.php';
+    return $template;
+    }
+add_filter ('single_template', 'cise_faculty_redirect_page_template');
+
 Class ResearchAreas {
 
 	public $plugin_dir;
