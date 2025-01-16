@@ -53,7 +53,7 @@ html.fancybox-lock {
     padding-bottom: 20px;
     padding-top: 25px;
     text-align: justify;
-    font-family: "gentona", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: inherit;
     font-size: 16px;
     color: #000;
 }
@@ -113,12 +113,14 @@ html.fancybox-lock {
     text-decoration: none !important;
     color: #000;
 }
-
+.fancybox-container {
+    z-index: 999998;
+}
 .fancyboxcont {
     padding: 0px;
     width: 75%;
     max-width: 1100px;
-    background: #FAF8F2 url(../img/bg-texture.png)
+    background:#fff;
 }
 
 hr.header-line {
