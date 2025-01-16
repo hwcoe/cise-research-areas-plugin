@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: CISE Research Areas
+Plugin Name: CISE Faculty Listing and Research Areas
 Description: Use this shortcode to display research areas under the "research-areas-pg" category<strong>[RESEARCH_AREAS type="post" posts_per_page="50" order="ASC" orderby="title" category_name="research-areas-pg"]</strong>
 Version: 1.1
 Author: Allison Logan
@@ -43,6 +43,15 @@ function cise_faculty_redirect_page_template ($template) {
     return $template;
     }
 add_filter ('single_template', 'cise_faculty_redirect_page_template');
+
+// allow style tag in wp_kses_post
+add_filter( 'wp_kses_allowed_html', 'acf_add_allowed_html_tags', 10, 2 );
+function acf_add_allowed_html_tags( $tags, $context ) {
+    if ( $context === 'post' ) {
+        $tags['style'] = array();
+    }
+    return $tags;
+}
 
 Class ResearchAreas {
 
@@ -112,7 +121,8 @@ Class ResearchAreas {
 				$research_areas .= 
 							'<div class="popupcont-text"><h1>' .get_the_title(). '</h1>
 								<hr class="header-line">
-								<p>' .get_field('content_area'). '</p>' ;
+								<p>' . wp_kses_post( get_field('content_area') ) . '</p>' ;
+
 
 				$research_areas .= '</div></div></div></div>';
 			endwhile;
