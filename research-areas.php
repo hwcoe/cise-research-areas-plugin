@@ -2,7 +2,7 @@
 /*
 Plugin Name: CISE Faculty Listing and Research Areas
 Description: Use this shortcode to display research areas under the "research-areas-pg" category<strong>[RESEARCH_AREAS type="post" posts_per_page="50" order="ASC" orderby="title" category_name="research-areas-pg"]</strong>
-Version: 1.1
+Version: 2.0
 Author: Allison Logan
 Author URI: http://allisoncandreva.com/
 */
