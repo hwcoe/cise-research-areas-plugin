@@ -10,7 +10,10 @@ get_header(); ?>
 	<header class="entry-header">
 		<?php the_post(); ?>
 		
-		<?php bootscore_post_thumbnail();	?>
+		<?php if( has_post_thumbnail() ) {
+			the_post_thumbnail('medium'); 
+		}
+		?>
 		<h1><?php the_title(); ?></h1>
 		
 	</header>
